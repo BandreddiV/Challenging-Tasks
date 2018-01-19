@@ -1,0 +1,12 @@
+sudo su \n
+yum update -y \n
+cd \n
+cd ~ \n
+curl -L https://www.opscode.com/chef/install.sh | bash \n
+curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c ^Cable -v 0.18.30 \n
+wget https://s3.amazonaws.com/fanaticsdata/Challenge/node.zip \n
+unzip node.zip \n
+rm -rf node.zip \n
+wget https://s3.amazonaws.com/fanaticsdata/Challenge/solo.rb \n
+wget https://s3.amazonaws.com/fanaticsdata/Challenge/web.json \n
+chef-solo -c solo.rb -j web.json
